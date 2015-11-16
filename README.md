@@ -14,15 +14,21 @@ Iranian-SSN lets you validate iranian national code. It checks the code and retu
 User `.validate(ssn, [Function])` to validate your national code.
 
     irssn.validate(ssn, function (err, result) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+
       if (result.status) {
         console.log("State is: ", result.state);
         console.log("City is: ", result.city_code, result.city);
+      } else {
+        console.log(result.error);
       }
     });
 
     # => {"valid"=>true, "ssn"=>"#ssn", "city_code"=>"044", "city"=>"شمیران", "state"=>"تهران"}
     # => {"valid"=>false, "erorr"=>"SSN is not valid."}
-    # => {"valid"=>false, "erorr"=>"SSN is empty."}
 
 #### Cities Database
 
