@@ -1,0 +1,10 @@
+build/
+reports/
+
+# Node.js
+node_modules/
+examples/login/node_modules/
+npm-debug.log
+
+# Mac OS X
+.DS_Store
