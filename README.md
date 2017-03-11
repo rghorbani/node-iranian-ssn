@@ -11,24 +11,16 @@ Iranian-SSN lets you validate iranian national code. It checks the code and retu
 
 #### Validation
 
-User `.validate(ssn, [Function])` to validate your national code.
+User `.validate(ssn, log = false)` to validate your national code.
 
-    irssn.validate(ssn, function (err, result) {
-      if (err) {
-        console.error(err);
-        return;
-      }
+    var result = irssn.validate(ssn);
+    console.log(result);
 
-      if (result.status) {
-        console.log("State is: ", result.state);
-        console.log("City is: ", result.city_code, result.city);
-      } else {
-        console.log(result.error);
-      }
-    });
+    result = irssn.validate(ssn, true);
+    console.log(result);
 
-    # => {"valid"=>true, "ssn"=>"#ssn", "city_code"=>"044", "city"=>"شمیران", "state"=>"تهران"}
-    # => {"valid"=>false, "erorr"=>"SSN is not valid."}
+    # => {"status"=>true, "ssn"=>"#ssn", "city_code"=>"044", "city"=>"شمیران", "state"=>"تهران"}
+    # => false
 
 #### Cities Database
 
@@ -38,7 +30,7 @@ Use `.cities` to access our cities database.
 
 ## Examples
 
-For a complete, working example, refer to the [example](https://github.com/jaredhanson/passport-facebook/tree/master/examples).
+For a complete, working example, refer to the [example](https://github.com/rghorbani/node-iranian-ssn/tree/master/test.js).
 
 ## Tests
 
@@ -53,4 +45,4 @@ For a complete, working example, refer to the [example](https://github.com/jared
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2015 Reza Ghorbani Farid <[http://rghorbani.ir](http://rghorbani.ir)>
+Copyright (c) 2015-present Reza Ghorbani Farid <[http://rghorbani.ir](http://rghorbani.ir)>
