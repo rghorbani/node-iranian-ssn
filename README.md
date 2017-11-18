@@ -5,7 +5,7 @@ Iranian-SSN lets you validate iranian national code. It checks the code and retu
 
 ## Install
 
-    $ npm install iranian-ssn
+    $ npm install iranian-ssn --save
 
 ## Usage
 

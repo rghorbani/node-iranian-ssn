@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var irssn = require('../');
+var irssn = require('./lib');
 
 
 console.log('Total cities in the database are: ' + Object.keys(irssn.cities).length);
